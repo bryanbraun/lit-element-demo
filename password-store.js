@@ -1,4 +1,4 @@
-import { Store } from './lib/store.js';
+import { Store } from './alt-react/store.js';
 
 const initialState = {
   passwordLength: 10,

@@ -1,12 +1,25 @@
-import { Component } from './component.js';
-import { CharacterCount } from './character-count.js';
+import { LitElement, html, css } from '/web_modules/lit-element.js';
 import { store } from '../password-store.js';
 
-export class LengthSlider extends Component {
+export class LengthSlider extends LitElement {
   constructor() {
-    super({
-      element: document.getElementById('length-slider'),
-    });
+    super();
+
+    store.subscribe('passwordLength', () => this.requestUpdate());
+  }
+
+  static get styles() {
+    return css`
+      input[type="range"] {
+        width: 100%;
+        /* padding-top: 4px; */
+      }
+      @media (max-width: 600px) {
+        input[type="range"] {
+          width: initial;
+        }
+      }
+    `
   }
 
   updateLength(event) {
@@ -14,15 +27,11 @@ export class LengthSlider extends Component {
   }
 
   render() {
-    this.element.innerHTML = `
-      <div>
-        Password Length: <output id="character-count"></output>
-      </div>
-      <input type="range" min="8" max="20" value="${store.state.passwordLength}" />
+    return html`
+      <label>
+        <div>Password Length: <output>${store.state.passwordLength}</output></div>
+        <input type="range" min="8" max="20" @input="${this.updateLength}" value="${store.state.passwordLength}" />
+      </label>
     `;
-
-    this.element.querySelector('input').addEventListener('input', this.updateLength);
-
-    new CharacterCount({ id: 'character-count' }).render();
   }
 }

@@ -15,39 +15,15 @@
 <body data-theme="light">
   <form class="main">
     <h1 class="title"><span>Password</span> <span>Generator</span></h1>
-    <div id="password" class="password">
-      <div class="password__text"></div>
-      <button class="password__refresh">
-        <svg xmlns="http://www.w3.org/2000/svg" class="refresh-icon" viewBox="0 0 18 18">
-          <path
-            d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z" />
-        </svg>
-      </button>
-    </div>
+    <pw-password></pw-password>
     <div class="options">
-      <label id="length-slider" class="length-slider">
-        <div>Password Length:
-          <output id="character-count">10</output>
-        </div>
-        <input type="range" min="8" max="20" value="10" />
-      </label>
-      <label id="numbers" class="pad-top">
-        <span>Numbers</span>
-        <input type="checkbox" />
-      </label>
-      <label id="symbols" class="pad-top">
-        <span>Symbols</span>
-        <input type="checkbox" />
-      </label>
+      <pw-length-slider class="length-slider"></pw-length-slider>
+      <pw-checkbox class="pad-top" name="Numbers" stateKey="characterOptions.hasNumbers"></pw-checkbox>
+      <pw-checkbox class="pad-top" name="Symbols" stateKey="characterOptions.hasSymbols"></pw-checkbox>
     </div>
-    <div id="dark-mode" class="dark-mode">
-      <label>
-        <span>Dark Mode</span>
-        <input type="checkbox" />
-      </label>
-    </div>
+    <pw-dark-mode class="dark-mode"></pw-dark-mode>
   </form>
-  <a href="https://github.com/bryanbraun/alt-react-demo"><img style="position: absolute; top: 0; right: 0; border: 0;"
+  <a href="https://github.com/bryanbraun/lit-html-demo"><img style="position: absolute; top: 0; right: 0; border: 0;"
       src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
       alt="Fork me on GitHub"
       data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

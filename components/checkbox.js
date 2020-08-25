@@ -1,32 +1,30 @@
-import { Component } from './component.js';
+import { LitElement, html, css } from '/web_modules/lit-element.js';
 import { store } from '../password-store.js';
 
-export class Checkbox extends Component {
-  constructor(props) {
-    super({
-      props,
-      renderTrigger: props.id,
-      element: document.getElementById(props.id),
-    });
+export class Checkbox extends LitElement {
+  constructor() {
+    super();
 
-    this.handleChange = this.handleChange.bind(this);
+    store.subscribe(this.stateKey, () => this.requestUpdate());
+  }
+
+  static get properties() {
+    return {
+      name: {},
+      stateKey: {},
+    }
   }
 
   handleChange(event) {
-    store.set(this.props.stateKey, event.target.checked);
+    store.set(this.stateKey, event.target.checked);
   }
 
   render() {
-    const checkedAttr = store.state[this.props.stateKey] ? 'checked' : '';
+    const isChecked = store.state[this.stateKey];
 
-    this.element.innerHTML = `
-      <span>${this.props.name}</span>
-      <input
-        type="checkbox"
-        ${checkedAttr}
-      />
+    return html`
+      <span>${this.name}</span>
+      <input type="checkbox" @change="${this.handleChange}" ?checked="${isChecked}" />
     `;
-
-    this.element.querySelector('input').addEventListener('change', this.handleChange);
   }
 }

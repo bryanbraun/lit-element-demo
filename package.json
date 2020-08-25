@@ -1,0 +1,17 @@
+{
+  "name": "lit-element-demo",
+  "version": "1.0.0",
+  "description": "A build-free alternative to React, based on Lit Element.",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  },
+  "snowpack": {
+    "install": [
+      "lit-element"
+    ]
+  }
+}

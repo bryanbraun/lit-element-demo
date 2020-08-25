@@ -1,30 +1,30 @@
-import { Component } from './component.js';
+import { LitElement, html } from '/web_modules/lit-element.js';
 
-export class DarkMode extends Component {
+export class DarkMode extends LitElement {
   constructor() {
-    super({ element: document.getElementById('dark-mode') });
+    super();
 
-    this.handleChange = this.handleChange.bind(this);
+    this.isDark = false;
+  }
+
+  static get properties() {
+    return {
+      isDark: { type: Boolean }
+    };
   }
 
   handleChange() {
-    this.setState({ isDark: !this.state.isDark })
+    this.isDark = !this.isDark;
   }
 
   render() {
-    const isDark = this.state.isDark;
+    document.body.setAttribute('data-theme', this.isDark ? 'dark' : 'light');
 
-    document.body
-      .setAttribute('data-theme', isDark ? 'dark' : 'light');
-
-    this.element.innerHTML = `
+    return html`
       <label>
         <span>Dark Mode</span>
-        <input type="checkbox" ${isDark ? 'checked' : ''} />
+        <input type="checkbox" ?checked="${this.isDark}" @change="${this.handleChange}" />
       </label>
     `;
-
-    this.element.querySelector('input')
-      .addEventListener('change', this.handleChange);
   }
 }

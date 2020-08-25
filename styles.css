@@ -35,55 +35,10 @@ body {
   margin: 0 auto;
 }
 
-.password {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.password__text {
-  flex: 1 1 100%;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  background-color: var(--pw-field-background-color);
-  border: 1px solid var(--pw-border-color);
-  border-right: 0;
-  text-align: center;
-  padding: 1rem;
-  font-size: 36px;
-  border-radius: 6px 0 0 6px;
-}
-
-.password__refresh {
-  flex: 0 0 auto;
-  background-color: var(--pw-field-background-color);
-  border: 1px solid var(--pw-border-color);
-  padding: 1rem;
-  cursor: pointer;
-  border-radius: 0 6px 6px 0;
-  outline: none;
-}
-
-.refresh-icon {
-  width: 36px;
-  height: 36px;
-}
-.refresh-icon path {
-  fill: var(--pw-font-color);
-}
-
-.password__refresh:focus {
-  background-color: var(--pw-button-focus-color);
-}
-
 .options {
   display: flex;
   justify-content: space-evenly;
   font-family: var(--sans);
-}
-
-input[type="range"] {
-  width: 100%;
-  padding-top: 4px;
 }
 
 .pad-top {
@@ -109,22 +64,11 @@ input[type="range"] {
   .title > span {
     display: block;
   }
-  .password__text {
-    flex: 0 0 auto;
-    font-size: 20px;
-  }
-  .refresh-icon {
-    width: 18px;
-    height: 18px;
-  }
   .options {
     flex-direction: column;
     text-align: center;
   }
-  .options > label {
+  .options > * {
     padding-bottom: 0.5rem;
-  }
-  input[type="range"] {
-    width: initial;
   }
 }
