@@ -2,7 +2,7 @@
 
 The purpose of this demo is to explore patterns for low-maintenance, churn-free, minimalist frontend apps.
 
-The demo app is [a Password Generator](https://bryanbraun.com/lit-element-demo), built using ReactJS conventions, on top of web components. It aims to have the ergonomics of React, without the workflow or maintenance burdens that comes with its mountain of dependencies. This app has no transpiling, no build steps, and only one dependency (LitElement). It also includes a simple custom store for managing global state.
+The demo app is [a Password Generator](https://bryanbraun.com/lit-element-demo/), built using ReactJS conventions, on top of web components. It aims to have the ergonomics of React, without the workflow or maintenance burdens that comes with its mountain of dependencies. This app has no transpiling, no build steps, and only one dependency (LitElement). It also includes a simple custom store for managing global state.
 
 For some background on this and similar efforts, see [this blog post](https://www.bryanbraun.com/2019/09/11/web-dev-nirvana-and-why-I-needed-to-let-go-of-reactjs-to-reach-it/).
 
