@@ -12,7 +12,6 @@ export class LengthSlider extends LitElement {
     return css`
       input[type="range"] {
         width: 100%;
-        /* padding-top: 4px; */
       }
       @media (max-width: 600px) {
         input[type="range"] {
