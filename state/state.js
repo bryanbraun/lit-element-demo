@@ -1,4 +1,4 @@
-export class Store {
+export class GlobalState {
   constructor(initialState) {
     this.events = {};
     this.state = initialState || {};

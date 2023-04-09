@@ -1,4 +1,4 @@
-import { Store } from './alt-react/store.js';
+import { GlobalState } from './state.js';
 
 const initialState = {
   passwordLength: 10,
@@ -8,4 +8,4 @@ const initialState = {
   }
 };
 
-export const store = new Store(initialState);
+export const store = new GlobalState(initialState);

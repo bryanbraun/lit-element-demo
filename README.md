@@ -13,6 +13,12 @@ Just [run SimpleHTTPServer](https://2ality.com/2014/06/simple-http-server.html) 
 ```
 python -m SimpleHTTPServer
 ```
+
+...or if your computer has python3 installed (like many modern macs):
+
+```
+python3 -m http.server 1111
+```
  
 ## Snowpack
 

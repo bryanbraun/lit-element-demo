@@ -1,5 +1,5 @@
 import { LitElement, html, css } from '../web_modules/lit-element.js';
-import { store } from '../password-store.js';
+import { store } from '../state/password-store.js';
 
 export class Checkbox extends LitElement {
   constructor() {
